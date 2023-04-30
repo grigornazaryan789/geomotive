@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Geomotive Test Task</string>
+    <string name="eur">EUR</string>
+    <string name="cvv">CVV</string>
+    <string name="card_number">Card Number</string>
+    <string name="card_hint">9999 9999 9999 9999</string>
+    <string name="holder_name">Card Holder Name</string>
+    <string name="_0">0</string>
+    <string name="_999">999</string>
+    <string name="john_smith">John Smith</string>
+    <string name="expiration">Expiration Date</string>
+    <string name="_07_25">07/25</string>
+    <string name="confirm_payment">Confirm Payment</string>
+    <string name="slash">/</string>
+    <string name="loading">Loading ...</string>
+    <string name="successful">"Successfully paid"</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="invalidCardNumber">Invalid card number</string>
+    <string name="invalidCvv">Invalid CVV number</string>
+    <string name="invalidAmount">Invalid amount of money</string>
+    <string name="invalidName">Name is empty</string>
+</resources>

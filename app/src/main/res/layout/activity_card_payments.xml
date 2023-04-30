@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        tools:context=".ui.activities.CardPaymentsActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue_background"
+            android:paddingHorizontal="@dimen/_10mdp"
+            android:paddingBottom="@dimen/_10mdp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cardType"
+                android:layout_width="@dimen/_90mdp"
+                android:layout_height="@dimen/_50mdp"
+                android:layout_marginTop="@dimen/_20mdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_unknown_card" />
+
+            <include
+                android:id="@+id/amount_container"
+                layout="@layout/price_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20mdp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardType"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cardType"
+                app:layout_constraintTop_toTopOf="@+id/cardType" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/card_number_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30mdp"
+                android:text="@string/card_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16msp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/cvv_title"
+                app:layout_constraintStart_toStartOf="@+id/cardType"
+                app:layout_constraintTop_toBottomOf="@id/cardType" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cvv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_30mdp"
+                android:paddingHorizontal="@dimen/_5msp"
+                android:text="@string/cvv"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16msp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/amount_container"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toEndOf="@+id/card_number_title"
+                app:layout_constraintTop_toBottomOf="@id/cardType" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/card_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:layout_marginEnd="@dimen/_10mdp"
+                android:background="@drawable/grey_background"
+                android:digits="01234 56789"
+                android:hint="@string/card_hint"
+                android:inputType="number"
+                android:paddingHorizontal="@dimen/_15mdp"
+                android:paddingVertical="@dimen/_5mdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15msp"
+                app:layout_constraintEnd_toStartOf="@+id/cvv_number"
+                app:layout_constraintStart_toStartOf="@id/card_number_title"
+                app:layout_constraintTop_toBottomOf="@id/card_number_title" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/cvv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:background="@drawable/grey_background"
+                android:gravity="center"
+                android:hint="@string/_999"
+                android:inputType="number"
+                android:maxLength="3"
+                android:minEms="3"
+                android:paddingHorizontal="@dimen/_5mdp"
+                android:paddingVertical="@dimen/_5mdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15msp"
+                app:layout_constraintEnd_toEndOf="@id/cvv_title"
+                app:layout_constraintStart_toStartOf="@id/cvv_title"
+                app:layout_constraintTop_toBottomOf="@id/cvv_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/card_holder_name_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:text="@string/holder_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16msp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/cvv_number"
+                app:layout_constraintStart_toStartOf="@+id/cardType"
+                app:layout_constraintTop_toBottomOf="@+id/card_number" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/card_holder_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:background="@drawable/grey_background"
+                android:hint="@string/john_smith"
+                android:maxLines="1"
+                android:paddingHorizontal="@dimen/_15mdp"
+                android:paddingVertical="@dimen/_5mdp"
+                android:textSize="@dimen/_15msp"
+                app:layout_constraintEnd_toEndOf="@+id/cvv_number"
+                app:layout_constraintStart_toStartOf="@+id/card_holder_name_title"
+                app:layout_constraintTop_toBottomOf="@+id/card_holder_name_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/expiration_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:text="@string/expiration"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16msp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/cvv_number"
+                app:layout_constraintStart_toStartOf="@+id/cardType"
+                app:layout_constraintTop_toBottomOf="@+id/card_holder_name" />
+
+            <Spinner
+                android:id="@+id/expiration_month"
+                android:layout_width="@dimen/_80mdp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:background="@drawable/grey_background"
+                android:paddingHorizontal="@dimen/_15mdp"
+                android:paddingVertical="@dimen/_5mdp"
+                android:textSize="@dimen/_15msp"
+                app:layout_constraintStart_toStartOf="@+id/card_holder_name_title"
+                app:layout_constraintTop_toBottomOf="@+id/expiration_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/slash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10mdp"
+                android:text="@string/slash"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16msp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/expiration_month"
+                app:layout_constraintStart_toEndOf="@+id/expiration_month"
+                app:layout_constraintTop_toTopOf="@+id/expiration_month" />
+
+            <Spinner
+                android:id="@+id/expiration_year"
+                android:layout_width="@dimen/_80mdp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15mdp"
+                android:layout_marginTop="@dimen/_15mdp"
+                android:background="@drawable/grey_background"
+                android:paddingHorizontal="@dimen/_15mdp"
+                android:paddingVertical="@dimen/_5mdp"
+                android:textSize="@dimen/_15msp"
+                app:layout_constraintStart_toEndOf="@+id/slash"
+                app:layout_constraintTop_toBottomOf="@+id/expiration_title" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/confirm_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20mdp"
+                android:layout_marginTop="@dimen/_35mdp"
+                android:paddingVertical="@dimen/_10mdp"
+                android:text="@string/confirm_payment"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15msp"
+                app:backgroundTint="@color/blue"
+                app:cornerRadius="@dimen/_10mdp"
+                app:layout_constraintEnd_toEndOf="@+id/expiration_title"
+                app:layout_constraintStart_toStartOf="@+id/expiration_title"
+                app:layout_constraintTop_toBottomOf="@+id/expiration_month" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
